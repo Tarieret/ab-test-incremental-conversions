@@ -35,7 +35,7 @@ Ad platforms count every conversion that follows an ad as caused by it, which ov
 - **Segments are descriptive,** not causal subgroup effects.
 
 ## Run it
-1. Save the [Kaggle "Marketing A/B Testing" CSV](LINK) as `data/raw/marketing_AB.csv`
+1. Save the [Kaggle "Marketing A/B Testing" CSV](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing) as `data/raw/marketing_AB.csv`
 2. `pip install -r requirements.txt` (Python 3.11+)
 3. Run `ab_test_analysis.ipynb` top to bottom (about 2 minutes; the bootstrap is the slow part). Seeds are fixed, so results reproduce.
 
