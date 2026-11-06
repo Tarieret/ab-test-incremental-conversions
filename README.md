@@ -1,10 +1,25 @@
 # Analyzing an Unbalanced A/B Test: Attributed vs. Incremental Conversions
 
+> **Status: work in progress.** I'm building this analysis step by step as I learn A/B testing, and I'll write it up when it's done. The notebook is partly complete, and the write-up below describes the planned final analysis. I expect to finish it this weekend.
+>
+> | Step | Status |
+> |---|---|
+> | Clean and check the data | Done |
+> | Group sizes and covariate balance | Done |
+> | Lift, z-test, analytic and bootstrap CIs | Done |
+> | Logistic regression check | In progress |
+> | Attributed vs. incremental conversions | To do |
+> | Power / minimum detectable effect | To do |
+> | Segments (Holm-corrected) | To do |
+> | Final write-up | To do |
+
 Ad platforms count every conversion that follows an ad as caused by it, which overstates what a campaign earned and leads to overspending. A platform's conversion count and the ad's causal effect are different quantities, and the gap between them is where budget decisions go wrong. This project measures that gap on a real randomized experiment (588,101 users, ad vs. a public-service-announcement control) and analyzes it carefully: the control group is only 4% of users, so the analysis has to account for what that does to precision and what the data can and cannot show.
 
 ![Attributed vs incremental](figures/attributed_vs_incremental.png)
 
 ## Key results
+*The notebook currently covers the group counts, the lift, the z-test, the analytic and bootstrap CIs, and the odds ratio. The marginal effect, incremental share, power and segment results, and the figure below, will be confirmed in the notebook as I complete those steps.*
+
 | | Ad | PSA (control) |
 |---|---|---|
 | Users | 564,577 (96%) | 23,524 (4%) |
@@ -37,7 +52,7 @@ Ad platforms count every conversion that follows an ad as caused by it, which ov
 ## Run it
 1. Save the [Kaggle "Marketing A/B Testing" CSV](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing) as `data/raw/marketing_AB.csv`
 2. `pip install -r requirements.txt` (Python 3.11+)
-3. Run `ab_test_analysis.ipynb` top to bottom (about 2 minutes; the bootstrap is the slow part). Seeds are fixed, so results reproduce.
+3. Run `ab_test_analysis.ipynb` top to bottom (about 2 minutes; the bootstrap is the slow part). Seeds are fixed, so results reproduce. The notebook is still being built, so it currently stops partway through the analysis.
 
 ## Stack
 Python · pandas · NumPy · SciPy · statsmodels · matplotlib · seaborn · Jupyter
